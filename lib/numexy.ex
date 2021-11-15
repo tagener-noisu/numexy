@@ -507,6 +507,12 @@ defmodule Numexy do
     |> new
   end
 
+  def reshape(%Array{array: v, shape: {rows, columns}}, length)
+    when rows * columns == length
+  do
+    List.flatten(v)
+  end
+
   @doc """
   Calculate outer product.
 

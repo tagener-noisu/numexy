@@ -288,6 +288,14 @@ defmodule NumexyTest do
     assert m.shape == {2, 3}
   end
 
+  test "test reshape back" do
+    data = [1, 2, 3, 4]
+    m = Numexy.reshape(data, 2)
+    result = Numexy.reshape(m, 4)
+
+    assert result == data
+  end
+
   test "test outer" do
     v1 = Numexy.new([1, 2, 3, 4])
     v2 = Numexy.new([4, 3, 2, 1])
